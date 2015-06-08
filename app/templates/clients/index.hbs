@@ -1,15 +1,18 @@
-{{#link-to "clients.new" class="btn btn-success"}}New Client{{/link-to}}
+
 <table class="table">
   <thead>
     <th>Id</th>
     <th>Name</th>
+    <th></th>
   </thead>
   <tbody>
   {{#each client in model}}
     <tr>
       <td>{{client.id}}</td>
       <td>{{client.name}}</td>
+      <td>{{#link-to "client.uploads"}}Uploads{{/link-to}}</td>
     </tr>
   {{/each}}
   </tbody>
 </table>
+{{#link-to "clients.new" class="btn btn-success"}}New Client{{/link-to}}

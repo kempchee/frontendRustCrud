@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <th>Date</th>
+    <th>Filename</th>
+  </thead>
+  <tbody>
+  {{#each upload in model}}
+    <tr>
+      <td>{{upload.humanCreatedAt}}</td>
+      <td>{{upload.name}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<a href="#" {{action "triggerUpload"}} class="btn btn-primary">Upload File</a>
+
+
+
+  <form action="http://localhost:3000/upload_record"  id="upload_record_form" enctype="multipart/form-data" method="post">
+    <input class="input_field" multiple="multiple" type="file" value="file" name="file" accept="audio/*|video/*|image/*|MIME_type"/>
+  </form>

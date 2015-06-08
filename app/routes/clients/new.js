@@ -6,7 +6,9 @@ export default Ember.Route.extend({
       jQuery.ajax({
         method:"POST",
         url:"http://localhost:3000/clients",
-        data:JSON.stringify({id:0,name:this.get("controller.name")}),
+        data:JSON.stringify({client:{
+          id:0,name:this.get("controller.name")}
+          }),
         success:function(client){
           route.store.push("client",client);
           route.transitionTo("clients");
