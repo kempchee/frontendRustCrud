@@ -10,6 +10,9 @@ export default Ember.Route.extend({
     },
     triggerUploadTransactionsInserts:function(){
       $("#upload_transactions_inserts_form .input_field").trigger("click")
+    },
+    triggerUploadTransactionsExperimental:function(){
+      $("#upload_transactions_experimental_form .input_field").trigger("click")
     }
   }
 });
