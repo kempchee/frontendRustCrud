@@ -1,0 +1,7 @@
+{{upload-handler formName="upload_records_form" formUrl="http://localhost:3000/upload_records" buttonLabel="Upload File"}}<br>
+{{upload-handler formName="upload_records_inserts_form" formUrl="http://localhost:3000/upload_records_inserts" buttonLabel="Upload Transactions Experimental"}}<br>
+{{upload-handler formName="upload_transactions_inserts_form" formUrl="http://localhost:3000/upload_transactions_inserts" buttonLabel="Upload Transactions(Inserts)" uploadContainer=this}}<br>
+{{upload-handler formName="upload_transactions_experimental_form" formUrl="http://localhost:3000/upload_transactions_experimental" buttonLabel="Upload Transactions Experimental"}}
+<div class="float-clear"></div>
+{{loading-bar uploadContainer=this}}
+{{socket-initializer }}

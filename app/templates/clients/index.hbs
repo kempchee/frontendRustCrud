@@ -6,7 +6,7 @@
     <th></th>
   </thead>
   <tbody>
-  {{#each client in model}}
+  {{#each model as |client|}}
     <tr>
       <td>{{client.id}}</td>
       <td>{{client.name}}</td>

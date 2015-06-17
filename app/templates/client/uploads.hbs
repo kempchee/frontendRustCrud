@@ -1,10 +1,15 @@
+
+{{#link-to "clients" class="btn btn-default"}}Back{{/link-to}}
+<div class="float-clear"></div>
+<br>
+
 <table class="table">
   <thead>
     <th>Date</th>
     <th>Filename</th>
   </thead>
   <tbody>
-  {{#each upload in model}}
+  {{#each model as |upload|}}
     <tr>
       <td>{{upload.humanCreatedAt}}</td>
       <td>{{upload.name}}</td>
@@ -13,22 +18,4 @@
   </tbody>
 </table>
 
-<a href="#" {{action "triggerUploadRecords"}} class="btn btn-primary">Upload File</a>
-<a href="#" {{action "triggerUploadRecordsInserts"}} class="btn btn-primary">Upload File(Inserts)</a>
-<a href="#" {{action "triggerUploadTransactionsInserts"}} class="btn btn-primary">Upload Transactions(Inserts)</a>
-<a href="#" {{action "triggerUploadTransactionsExperimental"}} class="btn btn-primary">Upload Transactions Experimental</a>
-
-
-
-  <form action="http://localhost:3000/upload_records"  id="upload_records_form" enctype="multipart/form-data" method="post">
-    <input class="input_field" multiple="multiple" type="file" value="file" name="file" accept="audio/*|video/*|image/*|MIME_type"/>
-  </form>
-  <form action="http://localhost:3000/upload_records_inserts"  id="upload_records_inserts_form" enctype="multipart/form-data" method="post">
-    <input class="input_field" multiple="multiple" type="file" value="file" name="file" accept="audio/*|video/*|image/*|MIME_type"/>
-  </form>
-  <form action="http://localhost:3000/upload_transactions_inserts"  id="upload_transactions_inserts_form" enctype="multipart/form-data" method="post">
-    <input class="input_field" multiple="multiple" type="file" value="file" name="file" accept="audio/*|video/*|image/*|MIME_type"/>
-  </form>
-  <form action="http://localhost:3000/upload_transactions_experimental"  id="upload_transactions_experimental_form" enctype="multipart/form-data" method="post">
-    <input class="input_field" multiple="multiple" type="file" value="file" name="file" accept="audio/*|video/*|image/*|MIME_type"/>
-  </form>
+  {{upload-container}}
